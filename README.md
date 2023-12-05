@@ -1,6 +1,6 @@
 # LSEG_Trades
 
-# Implementation Plan
+## Implementation Plan
 ---
-# Release Notes
+## Release Notes
 ---
