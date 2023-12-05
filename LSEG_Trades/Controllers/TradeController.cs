@@ -22,13 +22,9 @@ namespace LSEG_Trades.Api.Controllers
         [HttpPost]
         public async Task<ActionResult> SubmitTrade([FromBody] TradeDto tradeDto)
         {
-            // 201 - Created, for e.g. post
-            // 200
-            // URI Contains the get URI for the created object
-
             await _tradeService.SubmitTrade(tradeDto);
             // DUA 05-12-2023 - If we had a single stock retrieval endpoint the URI and created stock could go here
-            return Created(new Uri("/"), "");
+            return Created("", "");
         }
 
         [HttpGet]
@@ -38,7 +34,7 @@ namespace LSEG_Trades.Api.Controllers
         }
 
         [HttpGet]
-        public ActionResult<List<StockDto>> GetStocksByTickers([FromBody] string[] tickers)
+        public ActionResult<List<StockDto>> GetStocksByTickers([FromQuery] string[] tickers)
         {
             return _tradeService.GetStockRangeByTickers(tickers);
         }

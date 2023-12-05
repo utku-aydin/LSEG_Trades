@@ -11,7 +11,9 @@ namespace LSEG_Trades.Api.Data.ObjectRelationalMapping.Profiles
         public TradeProfile() 
         {
             CreateMap<Trade, TradeDto>();
+            CreateMap<TradeDto, Trade>();
             CreateMap<Stock, StockDto>();
+            CreateMap<StockDto, Stock>();
         }
     }
 }
