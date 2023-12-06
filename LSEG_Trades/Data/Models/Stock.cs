@@ -12,6 +12,6 @@ namespace LSEG_Trades.Data.Models
         public string Ticker { get; set; }
         [Required]
         public decimal LatestPrice { get; set; }
-        public List<Trade> Trades { get; set; }
+        public List<Trade> Trades { get; set; } = new List<Trade>();
     }
 }

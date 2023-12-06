@@ -39,9 +39,10 @@ namespace LSEG_Trades.Api.Service.Payment
                 stock = new Stock()
                 {
                     Ticker = tradeDto.StockTicker,
-                    LatestPrice = tradeDto.StockPrice,
-                    Trades = new List<Trade> { trade }
+                    LatestPrice = tradeDto.StockPrice
                 };
+
+                stock.Trades.Add(trade);
 
                 trade.StockId = stock.StockId;
 
