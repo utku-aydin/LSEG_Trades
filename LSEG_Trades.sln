@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.7.34003.232
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LSEG_Trades", "LSEG_Trades\LSEG_Trades.csproj", "{09640261-48D0-4039-9B41-06FFEFDE99E7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LSEG_Trades", "LSEG_Trades\LSEG_Trades.csproj", "{09640261-48D0-4039-9B41-06FFEFDE99E7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LSEG_TradesTests", "LSEG_TradesTests\LSEG_TradesTests.csproj", "{7B300E32-5E5A-4698-B24A-AD6DE32E1FC2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{09640261-48D0-4039-9B41-06FFEFDE99E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{09640261-48D0-4039-9B41-06FFEFDE99E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{09640261-48D0-4039-9B41-06FFEFDE99E7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7B300E32-5E5A-4698-B24A-AD6DE32E1FC2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7B300E32-5E5A-4698-B24A-AD6DE32E1FC2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7B300E32-5E5A-4698-B24A-AD6DE32E1FC2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7B300E32-5E5A-4698-B24A-AD6DE32E1FC2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

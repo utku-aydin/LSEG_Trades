@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace LSEG_Trades.Api.Data.ObjectRelationalMapping.Repositories
 {
-    public class TradeRepository : ITradeRepository
+    public class TradeRepository : ITradeRepository, IDisposable
     {
         private readonly TradeDbContext _context;
 
@@ -47,6 +47,11 @@ namespace LSEG_Trades.Api.Data.ObjectRelationalMapping.Repositories
         public List<Stock> GetStockRangeByTickers(string[] tickers)
         {
             return _context.Stocks.Where(s => tickers.Contains(s.Ticker)).ToList();
+        }
+
+        public void Dispose()
+        {
+            _context?.Dispose();
         }
     }
 }

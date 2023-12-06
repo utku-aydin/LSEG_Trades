@@ -35,7 +35,7 @@ namespace LSEG_Trades.Api.Service.Payment
             {
                 stock = new Stock()
                 {
-                    Id = Guid.NewGuid(),
+                    UniqueReference = Guid.NewGuid(),
                     Ticker = tradeDto.StockTicker,
                     LatestPrice = tradeDto.StockPrice
                 };

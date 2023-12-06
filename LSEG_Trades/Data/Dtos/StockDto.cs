@@ -10,6 +10,7 @@ namespace LSEG_Trades.Data.Dtos
         public string Ticker { get; set; }
 
         [Required]
+        [Range(0.01, double.MaxValue)]
         [JsonPropertyName("latest_price")]
         public decimal LatestPrice { get; set; }
     }

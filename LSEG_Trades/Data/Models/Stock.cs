@@ -6,7 +6,7 @@ namespace LSEG_Trades.Data.Models
     {
         [Key]
         [Required]
-        public Guid Id { get; set; }
+        public Guid UniqueReference { get; set; }
         [Required]
         public string Ticker { get; set; }
         [Required]
