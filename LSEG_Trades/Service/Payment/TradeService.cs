@@ -23,22 +23,27 @@ namespace LSEG_Trades.Api.Service.Payment
 
         public async Task SubmitTrade(TradeDto tradeDto)
         {
-            _repository.AddTrade(_mapper.Map<Trade>(tradeDto));
+            Trade trade = _mapper.Map<Trade>(tradeDto);
+            _repository.AddTrade(trade);
             Stock? stock = await _repository.GetStockByTicker(tradeDto.StockTicker);
 
             if (stock != null)
             {
+                trade.StockId = stock.StockId;
                 stock.LatestPrice = tradeDto.StockPrice;
+                stock.Trades.Add(trade);
                 _repository.UpdateStock(stock);
             }
             else
             {
                 stock = new Stock()
                 {
-                    UniqueReference = Guid.NewGuid(),
                     Ticker = tradeDto.StockTicker,
-                    LatestPrice = tradeDto.StockPrice
+                    LatestPrice = tradeDto.StockPrice,
+                    Trades = new List<Trade> { trade }
                 };
+
+                trade.StockId = stock.StockId;
 
                 _repository.AddStock(stock);
             }

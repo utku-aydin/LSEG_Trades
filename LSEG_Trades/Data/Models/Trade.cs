@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using LSEG_Trades.Data.Models;
+using System.ComponentModel.DataAnnotations;
 
 namespace LSEG_Trades.Api.Data.Models
 {
@@ -6,7 +7,7 @@ namespace LSEG_Trades.Api.Data.Models
     {
         [Key]
         [Required]
-        public Guid UniqueReference { get; set; }
+        public Guid TradeId { get; set; } = Guid.NewGuid();
         [Required]
         public string StockTicker { get; set; }
         [Required]
@@ -15,5 +16,7 @@ namespace LSEG_Trades.Api.Data.Models
         public decimal ShareCount { get; set; }
         [Required]
         public string BrokerId { get; set; }
+        public Guid StockId { get; set; }
+        public Stock Stock { get; set; }
     }
 }
